@@ -1,0 +1,73 @@
+.input-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #E1E4E6;
+  border-radius: 4px;
+
+  &:before {
+    content: 'Автор';
+    position: absolute;
+    padding: 0 5px;
+    top: -8px;
+    left: 6px;
+    color: #8C9499;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: white;
+  }
+
+  &:after {
+    content: 'Я';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    color: #656E73;
+    background-color: #EFF1F2;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+}
+
+.checkbox-list {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin-bottom: 26px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  input, label {
+    cursor: pointer;
+  }
+
+  label {
+    white-space: nowrap;
+  }
+}
+
+.block-title {
+  margin-bottom: 16px;
+}
+
+@media (width <= 850px) {
+  .checkbox-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-left: 12px;
+    margin-bottom: 26px;
+  }
+}

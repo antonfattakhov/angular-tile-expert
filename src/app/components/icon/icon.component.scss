@@ -1,0 +1,8 @@
+:host {
+  display: flex;
+}
+
+.image {
+  background-color: var(--icon-color);
+  mask-image: var(--icon-src);
+}

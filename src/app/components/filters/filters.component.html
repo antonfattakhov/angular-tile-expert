@@ -1,0 +1,45 @@
+<div class="filters-container">
+  <div class="input-container">
+    <input
+      type="text"
+      placeholder="Имя или должность"
+      [formControl]="form.controls.author"
+    />
+  </div>
+
+  <div class="checkbox-list">
+    <div class="checkbox-container">
+      <input type="checkbox" id="member" [formControl]="form.controls.member">
+      <label for="member">Я участник</label>
+    </div>
+
+    <div class="checkbox-container">
+      <input type="checkbox" id="strictSearch" [formControl]="form.controls.strictSearch">
+      <label for="strictSearch">Строгий поиск</label>
+    </div>
+
+    <div class="checkbox-container">
+      <input type="checkbox" id="headers" [formControl]="form.controls.headers">
+      <label for="headers">В заголовках</label>
+    </div>
+  </div>
+
+  <div class="block-title">Только</div>
+
+  <div class="checkbox-list">
+    <div class="checkbox-container">
+      <input type="checkbox" id="tags" [formControl]="form.controls.tags">
+      <label for="tags">Теги</label>
+    </div>
+
+    <div class="checkbox-container">
+      <input type="checkbox" id="questions" [formControl]="form.controls.questions">
+      <label for="questions">Просьбы</label>
+    </div>
+
+    <div class="checkbox-container">
+      <input type="checkbox" id="contacts" [formControl]="form.controls.contacts">
+      <label for="contacts">Контакты</label>
+    </div>
+  </div>
+</div>

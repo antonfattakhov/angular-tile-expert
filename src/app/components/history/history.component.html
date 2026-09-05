@@ -1,0 +1,9 @@
+<div class="history-container">
+  <div class="history-title">История</div>
+
+  <div class="history-list">
+    @for (item of historyList(); track $index) {
+      <span>{{ item.name }}</span>
+    }
+  </div>
+</div>

@@ -1,0 +1,55 @@
+@let isMobileFormat = isMobileFormat$ | async;
+
+@if (!isMobileFormat) {
+  <ng-container [ngTemplateOutlet]="menu"></ng-container>
+} @else {
+  <button (click)="onBurgerClicked()">
+    <app-icon name="menu"/>
+  </button>
+
+  <div class="mobile-menu" [class.show]="showMobileMenu()">
+    <div class="mobile-menu-header">
+      <div class="mobile-menu-title">Меню</div>
+
+      <button class="close-button" (click)="onCloseButtonClicked()">
+        <app-icon name="add2"/>
+      </button>
+    </div>
+
+    <ng-container [ngTemplateOutlet]="menu"></ng-container>
+  </div>
+}
+
+<ng-template #menu>
+  <div class="menu-item-container" [class.mobile]="isMobileFormat">
+    <a class="menu-item">
+      <app-icon name="link" [color]="isMobileFormat ? 'black' : 'white'"/>
+
+      <div>Ссылки</div>
+    </a>
+
+    <a class="menu-item">
+      <app-icon name="contacts" [color]="isMobileFormat ? 'black' : 'white'"/>
+
+      <div>Контакты</div>
+    </a>
+
+    <a class="menu-item">
+      <app-icon name="tag" [color]="isMobileFormat ? 'black' : 'white'"/>
+
+      <div>Теги</div>
+    </a>
+
+    <a class="menu-item">
+      <app-icon name="favorites" [color]="isMobileFormat ? 'black' : 'white'"/>
+
+      <div>Избранное</div>
+    </a>
+
+    <a class="menu-item">
+      <app-icon name="history" [color]="isMobileFormat ? 'black' : 'white'"/>
+
+      <div>Посещения</div>
+    </a>
+  </div>
+</ng-template>

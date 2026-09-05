@@ -1,0 +1,52 @@
+@let isMobileFormat = isMobileFormat$ | async;
+
+<button (click)="onSearchClicked()">
+  <app-icon name="search"/>
+</button>
+
+@if (!isMobileFormat) {
+  <div class="search-menu" [class.show]="showSearchMenu()">
+    <div class="search-menu-input">
+      <input
+        type="text"
+        placeholder="Поисковый запрос"
+        [formControl]="searchControl"
+        (focus)="onFocus()"
+      />
+    </div>
+
+    @if (showSearchMenuDropdown()) {
+      <div class="search-menu-dropdown">
+        <div class="left-side">
+          <app-history/>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="right-side">
+          <app-filters/>
+        </div>
+      </div>
+    }
+  </div>
+} @else {
+  <div class="mobile-search-menu" [class.show]="showSearchMenu()">
+    <div class="mobile-search-menu-header">
+      <button (click)="onBackClicked()">
+        <app-icon name="arrow_back" color="black"/>
+      </button>
+
+      <div class="mobile-search-menu-input">
+        <input
+          type="text"
+          placeholder="Поиск"
+          [formControl]="searchControl"
+        />
+      </div>
+    </div>
+
+    <div class="mobile-search-menu-main">
+      <app-filters/>
+    </div>
+  </div>
+}

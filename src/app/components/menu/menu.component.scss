@@ -1,0 +1,53 @@
+.menu-item-container {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  color: white;
+
+  &.mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    color: black;
+  }
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+}
+
+.mobile-menu {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  visibility: hidden;
+  overflow: hidden;
+  background-color: white;
+  z-index: 2;
+  transition: all 200ms ease-in-out;
+
+  &.show {
+    visibility: visible;
+    width: 100%;
+  }
+}
+
+.mobile-menu-header {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  color: white;
+  background-color: #1074CC;
+}
+
+.close-button {
+  transform: rotate(45deg);
+}
