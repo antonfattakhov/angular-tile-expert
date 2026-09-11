@@ -1,22 +1,18 @@
-import { Component, ElementRef, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, inject, signal } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { MediaObserverService } from '../../services/media-observer.service';
 import { HistoryComponent } from '../history/history.component';
 import { FiltersComponent } from '../filters/filters.component';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { IconComponent } from '../icon/icon.component';
+import { HistoryItem } from '../../interfaces/history-item.interface';
 
 @Component({
-  imports: [
-    AsyncPipe,
-    HistoryComponent,
-    FiltersComponent,
-    ReactiveFormsModule,
-    IconComponent,
-  ],
+  imports: [AsyncPipe, HistoryComponent, FiltersComponent, ReactiveFormsModule, IconComponent],
   selector: 'app-search',
   styleUrl: './search.component.scss',
   templateUrl: './search.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     '(document:click)': 'onClickOutside($event)',
   },
@@ -34,6 +30,10 @@ export class SearchComponent {
 
   onSearchClicked(): void {
     this.showSearchMenu.set(true);
+  }
+
+  onHistoryItemSelected(historyItem: HistoryItem): void {
+    this.searchControl.setValue(historyItem.name);
   }
 
   onClickOutside(event: Event): void {

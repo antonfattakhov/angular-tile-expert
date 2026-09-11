@@ -1,13 +1,27 @@
+@let isMobileFormat = isMobileFormat$ | async;
+
 <header class="header">
   <div class="main-part">
     <app-menu class="menu"/>
 
-    <app-search/>
+    @if (!isMobileFormat) {
+      <app-search/>
 
-    <button>
-      <app-icon name="add2"/>
+      <button>
+        <app-icon name="add2"/>
+      </button>
+    } @else {
+      <button>
+        <app-icon name="add2"/>
+      </button>
 
-    </button>
+      <button>
+        <app-icon name="history"/>
+      </button>
+
+      <app-search/>
+    }
+
   </div>
 
   <div class="right-part">

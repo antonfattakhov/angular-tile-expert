@@ -8,38 +8,20 @@
   </div>
 
   <div class="checkbox-list">
-    <div class="checkbox-container">
-      <input type="checkbox" id="member" [formControl]="form.controls.member">
-      <label for="member">Я участник</label>
-    </div>
+    <app-checkbox label="Я участник" [formControl]="form.controls.member"/>
 
-    <div class="checkbox-container">
-      <input type="checkbox" id="strictSearch" [formControl]="form.controls.strictSearch">
-      <label for="strictSearch">Строгий поиск</label>
-    </div>
+    <app-checkbox label="Строгий поиск" [formControl]="form.controls.strictSearch"/>
 
-    <div class="checkbox-container">
-      <input type="checkbox" id="headers" [formControl]="form.controls.headers">
-      <label for="headers">В заголовках</label>
-    </div>
+    <app-checkbox label="В заголовках" [formControl]="form.controls.headers"/>
   </div>
 
   <div class="block-title">Только</div>
 
   <div class="checkbox-list">
-    <div class="checkbox-container">
-      <input type="checkbox" id="tags" [formControl]="form.controls.tags">
-      <label for="tags">Теги</label>
-    </div>
+    <app-checkbox label="Теги" [formControl]="form.controls.tags"/>
 
-    <div class="checkbox-container">
-      <input type="checkbox" id="questions" [formControl]="form.controls.questions">
-      <label for="questions">Просьбы</label>
-    </div>
+    <app-checkbox label="Просьбы" [formControl]="form.controls.questions"/>
 
-    <div class="checkbox-container">
-      <input type="checkbox" id="contacts" [formControl]="form.controls.contacts">
-      <label for="contacts">Контакты</label>
-    </div>
+    <app-checkbox label="Контакты" [formControl]="form.controls.contacts"/>
   </div>
 </div>

@@ -41,21 +41,8 @@
   display: flex;
   align-items: center;
   gap: 35px;
+  padding-left: 12px;
   margin-bottom: 26px;
-}
-
-.checkbox-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  input, label {
-    cursor: pointer;
-  }
-
-  label {
-    white-space: nowrap;
-  }
 }
 
 .block-title {

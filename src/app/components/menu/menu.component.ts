@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { IconComponent } from '../icon/icon.component';
 import { MediaObserverService } from '../../services/media-observer.service';
 import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
@@ -8,6 +8,7 @@ import { AsyncPipe, NgTemplateOutlet } from '@angular/common';
   selector: 'app-menu',
   styleUrl: './menu.component.scss',
   templateUrl: './menu.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MenuComponent {
   private readonly mediaObserverService = inject(MediaObserverService);

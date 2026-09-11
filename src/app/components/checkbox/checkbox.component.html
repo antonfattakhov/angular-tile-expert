@@ -1,0 +1,12 @@
+<label class="checkbox-container">
+  <div class="checkbox">
+    <input
+      type="checkbox"
+      [id]="label()"
+      [ngModel]="value()"
+      (ngModelChange)="onModelChange($event)"/>
+    <div class="checkbox-mark"></div>
+  </div>
+
+  <span class="label">{{ label() }}</span>
+</label>

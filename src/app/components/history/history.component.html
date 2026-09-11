@@ -3,7 +3,7 @@
 
   <div class="history-list">
     @for (item of historyList(); track $index) {
-      <span>{{ item.name }}</span>
+      <span class="history-item" (click)="onSelect(item)" tabindex="0">{{ item.name }}</span>
     }
   </div>
 </div>

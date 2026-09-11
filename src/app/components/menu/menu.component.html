@@ -46,10 +46,12 @@
       <div>Избранное</div>
     </a>
 
-    <a class="menu-item">
-      <app-icon name="history" [color]="isMobileFormat ? 'black' : 'white'"/>
+    @if (!isMobileFormat) {
+      <a class="menu-item">
+        <app-icon name="history" [color]="isMobileFormat ? 'black' : 'white'"/>
 
-      <div>Посещения</div>
-    </a>
+        <div>Посещения</div>
+      </a>
+    }
   </div>
 </ng-template>

@@ -18,7 +18,7 @@
     @if (showSearchMenuDropdown()) {
       <div class="search-menu-dropdown">
         <div class="left-side">
-          <app-history/>
+          <app-history (itemSelected)="onHistoryItemSelected($event)"/>
         </div>
 
         <div class="divider"></div>
